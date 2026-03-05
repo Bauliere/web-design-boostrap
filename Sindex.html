@@ -5,44 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctanos — Glass Edition</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="assets/img/nocall.jpeg" />
+    <!-- El iconito de la pestaña, aquí uso otra imagen diferente -->
+    <link rel="icon" type="image/jpeg" href="assets/img/fausto.jpeg" />
 
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome: los íconos -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
     />
 
-    <!-- CSS Glassmorphism -->
+    <!-- Mi CSS glassmorphism, sin Bootstrap aquí -->
     <link rel="stylesheet" href="./assets/css/styles2.css" />
   </head>
   <body>
 
-    <!-- Orbes decorativos -->
+    <!-- Círculos de color borrosos en el fondo, solo son decorativos -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
     <!-- ===================== NAVBAR ===================== -->
+    <!-- Aquí no uso Bootstrap, hice mi propio navbar con glass -->
     <nav class="navbar-glass">
       <div class="nav-inner">
 
-        <!-- Brand -->
+        <!-- Mi logo a la izquierda -->
         <a class="nav-brand" href="#">
           <i class="fa-solid fa-code"></i>
           <span>JG Dev</span>
         </a>
 
-        <!-- Toggler móvil -->
+        <!-- El botón hamburguesa para móvil, lo controlo con JS -->
         <button class="nav-toggler" id="navToggler" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <!-- Solo el botón comparador -->
+        <!-- Solo el botón para ir a la versión Bootstrap -->
         <ul class="nav-links" id="navLinks">
           <li>
-            <a class="btn-switch-glass" href="Index.html">
+            <a class="btn-switch-glass" href="index.html">
               <i class="fa-brands fa-bootstrap"></i> Ver versión Bootstrap
             </a>
           </li>
@@ -56,19 +57,21 @@
       <div class="container-glass">
         <h2 class="page-title">Contáctanos!</h2>
 
+        <!-- La tarjeta con efecto de vidrio (glassmorphism) -->
         <div class="form-card">
           <form novalidate>
 
-            <!-- Nombre completo -->
+            <!-- Campo: Nombre completo -->
             <div class="field-group">
               <label for="nombre" class="field-label">Nombre completo</label>
+              <!-- input-wrap: el contenedor del ícono + input juntos -->
               <div class="input-wrap">
                 <span class="input-icon"><i class="fa-solid fa-user"></i></span>
                 <input type="text" id="nombre" class="field-input" placeholder="Ej: Fausto" />
               </div>
             </div>
 
-            <!-- Correo Electrónico -->
+            <!-- Campo: Correo Electrónico -->
             <div class="field-group">
               <label for="correo" class="field-label">Correo Electronico</label>
               <div class="input-wrap">
@@ -77,7 +80,7 @@
               </div>
             </div>
 
-            <!-- Teléfono -->
+            <!-- Campo: Teléfono -->
             <div class="field-group">
               <label for="telefono" class="field-label">Telefono</label>
               <div class="input-wrap">
@@ -86,7 +89,7 @@
               </div>
             </div>
 
-            <!-- Asunto -->
+            <!-- Campo: Asunto -->
             <div class="field-group">
               <label for="asunto" class="field-label">Asunto</label>
               <div class="input-wrap">
@@ -95,13 +98,13 @@
               </div>
             </div>
 
-            <!-- Mensaje -->
+            <!-- Campo: Mensaje, el textarea va solo sin wrapper de ícono -->
             <div class="field-group">
               <label for="mensaje" class="field-label">Mensaje</label>
               <textarea id="mensaje" class="field-textarea" placeholder="Escriba su mensaje aquí..."></textarea>
             </div>
 
-            <!-- Botón Enviar -->
+            <!-- Botón Enviar, ocupa todo el ancho por display: block + width: 100% -->
             <button type="submit" class="btn-send">Enviar</button>
 
           </form>
@@ -111,16 +114,21 @@
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer-glass">
+
+      <!-- Info a la izquierda, íconos a la derecha -->
       <div class="footer-top">
         <div class="footer-dev">
+          <!-- Mi nombre -->
           <p class="footer-name">
             <i class="fa-solid fa-laptop-code"></i> Jesús Gabriel Amador Ramírez
           </p>
+          <!-- Mi ubicación y rol -->
           <p class="footer-role">
             <i class="fa-solid fa-location-dot"></i> Pachuca, Hidalgo, MX &nbsp;|&nbsp;
             <i class="fa-solid fa-code"></i> Web Developer &amp; CS Student
           </p>
         </div>
+        <!-- Íconos de redes sociales -->
         <div class="footer-icons">
           <a href="https://github.com/Bauliere" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -128,11 +136,14 @@
           <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
+
+      <!-- Franja de copyright -->
       <div class="footer-bottom">
         <small>&copy; 2026 Jesús Gabriel Amador Ramírez &mdash; Todos los derechos reservados</small>
       </div>
     </footer>
 
+    <!-- JS mínimo: solo para abrir y cerrar el menú hamburguesa en móvil -->
     <script>
       const toggler = document.getElementById('navToggler');
       const navLinks = document.getElementById('navLinks');

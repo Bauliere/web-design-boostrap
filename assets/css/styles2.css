@@ -1,10 +1,13 @@
 /* =========================================
-   Glassmorphism — styles2.css  (sin Bootstrap)
-   Paleta: teal oscuro / esmeralda / crema
+   GLASSMORPHISM — styles2.css
+   Diseño con efecto de vidrio (glass).
+   Paleta de colores: verde esmeralda / teal oscuro.
    ========================================= */
 
+/* Importo la fuente Inter de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+/* Quito márgenes y paddings por defecto de todos los elementos */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -12,60 +15,62 @@ html, body {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-/* ── Fondo oscuro cálido ── */
+/* ── Fondo oscuro con degradado verde-teal ── */
 body {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* navbar arriba, main en medio, footer abajo */
   background: linear-gradient(135deg, #0d1f1a 0%, #0e2a23 45%, #152e28 100%);
-  background-attachment: fixed;
+  background-attachment: fixed; /* el fondo no se mueve al hacer scroll */
   color: #d4ede6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* evito scroll horizontal en móvil */
 }
 
-/* ── Orbes decorativos ── */
+/* ── Orbes (círculos borrosos decorativos de fondo) ── */
 .orb {
-  position: fixed;
+  position: fixed; /* se quedan fijos aunque haga scroll */
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(90px); /* muy borrosos, solo se ve el color difuminado */
   opacity: 0.30;
-  pointer-events: none;
-  z-index: 0;
-  animation: floatOrb 14s ease-in-out infinite alternate;
+  pointer-events: none; /* no se puede hacer clic en ellos */
+  z-index: 0; /* van detrás de todo el contenido */
+  animation: floatOrb 14s ease-in-out infinite alternate; /* flotan suavemente */
 }
+/* Cada orbe tiene posición, tamaño y color diferente */
 .orb-1 { width: 400px; height: 400px; background: #1aad7f; top: -80px; left: -60px; animation-delay: 0s; }
 .orb-2 { width: 320px; height: 320px; background: #0e7c5a; bottom: 80px; right: -40px; animation-delay: 4s; }
 .orb-3 { width: 240px; height: 240px; background: #34c9a0; top: 42%; left: 50%; transform: translateX(-50%); animation-delay: 8s; }
 
+/* La animación del flotado: sube/baja un poco y crece un poquito */
 @keyframes floatOrb {
   from { transform: translateY(0) scale(1); }
   to   { transform: translateY(28px) scale(1.06); }
 }
 
 /* ===================== NAVBAR ===================== */
+/* El efecto glass: fondo semitransparente + desenfoque del contenido detrás */
 .navbar-glass {
-  position: sticky;
+  position: sticky; /* se queda pegado arriba al hacer scroll */
   top: 0;
-  z-index: 100;
-  background: rgba(10, 28, 23, 0.70);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(52, 201, 160, 0.18);
+  z-index: 100; /* encima de todo, incluyendo los orbes */
+  background: rgba(10, 28, 23, 0.70); /* fondo oscuro con transparencia */
+  backdrop-filter: blur(20px) saturate(180%); /* desenfoca lo que hay detrás */
+  -webkit-backdrop-filter: blur(20px) saturate(180%); /* lo mismo para Safari */
+  border-bottom: 1px solid rgba(52, 201, 160, 0.18); /* línea verde sutil abajo */
   box-shadow: 0 2px 18px rgba(0,0,0,0.4);
 }
 
-/* DESPUÉS */
+/* El contenedor interno del navbar: logo a la izquierda, links a la derecha */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;              /* ocupa todo el ancho */
-  padding: 0 1.5rem;        /* padding lateral igual al Bootstrap */
-  height: 58px;
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 58px; /* altura fija igual que el navbar Bootstrap */
 }
 
-
-
+/* El nombre/logo "JG Dev" */
 .nav-brand {
   display: flex;
   align-items: center;
@@ -77,9 +82,10 @@ body {
   letter-spacing: 0.03em;
   transition: color 0.2s;
 }
-.nav-brand i { color: #34c9a0; }
+.nav-brand i { color: #34c9a0; } /* el ícono en verde */
 .nav-brand:hover { color: #34c9a0; }
 
+/* La lista de links del navbar */
 .nav-links {
   list-style: none;
   display: flex;
@@ -87,26 +93,28 @@ body {
   gap: 0.25rem;
 }
 
-/* Botón comparador */
+/* ── Botón comparador (ir a la versión Bootstrap) ── */
 .btn-switch-glass {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: linear-gradient(135deg, #0e7c5a, #1aad7f) !important;
+  background: linear-gradient(135deg, #0e7c5a, #1aad7f) !important; /* degradado verde */
   color: #fff !important;
-  border-radius: 20px;
+  border-radius: 20px; /* forma de píldora */
   padding: 0.35rem 1rem;
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
-  box-shadow: 0 0 14px rgba(26, 173, 127, 0.45);
+  box-shadow: 0 0 14px rgba(26, 173, 127, 0.45); /* brillo verde alrededor */
   transition: box-shadow 0.2s, transform 0.15s;
 }
+/* Al pasar el mouse, el brillo se intensifica y el botón crece un poco */
 .btn-switch-glass:hover {
   box-shadow: 0 0 24px rgba(26, 173, 127, 0.75);
   transform: scale(1.04);
 }
 
+/* El botón hamburguesa para móvil, empieza oculto en desktop */
 .nav-toggler {
   display: none;
   background: transparent;
@@ -120,21 +128,22 @@ body {
 
 /* ===================== MAIN ===================== */
 .main-wrapper {
-  flex: 1;
+  flex: 1; /* ocupa todo el espacio entre navbar y footer */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 1; /* encima de los orbes pero debajo del navbar */
   padding: 3rem 1rem;
 }
 
-/* Mismo ancho máximo que Bootstrap (container ~720px centrado → card 520px) */
+/* El contenedor que limita el ancho, igual al de Bootstrap */
 .container-glass {
   width: 100%;
   max-width: 560px;
 }
 
+/* El título de la página con brillo verde */
 .page-title {
   text-align: center;
   font-size: 1.6rem;
@@ -142,28 +151,29 @@ body {
   letter-spacing: 0.01em;
   margin-bottom: 1.5rem;
   color: #e8f8f3;
-  text-shadow: 0 0 18px rgba(52, 201, 160, 0.4);
+  text-shadow: 0 0 18px rgba(52, 201, 160, 0.4); /* resplandor verde sutil */
 }
 
-/* ── Card ── */
+/* ── Tarjeta con efecto glass ── */
 .form-card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(22px) saturate(170%);
-  -webkit-backdrop-filter: blur(22px) saturate(170%);
-  border: 1px solid rgba(52, 201, 160, 0.22);
-  border-radius: 8px;           /* igual al Bootstrap (--border-radius-card: 8px) */
-  padding: 2rem 2.5rem;         /* idéntico al Bootstrap .form-card */
-  max-width: 520px;             /* idéntico */
+  background: rgba(255, 255, 255, 0.07); /* muy transparente, casi invisible */
+  backdrop-filter: blur(22px) saturate(170%); /* desenfoca lo que hay detrás */
+  -webkit-backdrop-filter: blur(22px) saturate(170%); /* Safari */
+  border: 1px solid rgba(52, 201, 160, 0.22); /* borde verde suave */
+  border-radius: 8px; /* igual al de la versión Bootstrap */
+  padding: 2rem 2.5rem; /* mismo padding que Bootstrap */
+  max-width: 520px;     /* mismo ancho que Bootstrap */
   width: 100%;
   margin: 0 auto;
   box-shadow:
     0 2px 12px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(52, 201, 160, 0.12);
+    inset 0 1px 0 rgba(52, 201, 160, 0.12); /* línea de luz interna arriba */
 }
 
-/* ── Labels ── */
-.field-group { margin-bottom: 1rem; }     /* ~mb-3 de Bootstrap */
+/* ── Cada campo del formulario ── */
+.field-group { margin-bottom: 1rem; } /* espacio entre campos */
 
+/* La etiqueta encima de cada input */
 .field-label {
   display: block;
   font-size: 0.9rem;
@@ -172,51 +182,54 @@ body {
   margin-bottom: 0.35rem;
 }
 
-/* ── Input wrap (replica el input-group de Bootstrap) ── */
+/* ── El wrapper de ícono + input, replica el input-group de Bootstrap ── */
 .input-wrap {
   display: flex;
   align-items: stretch;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: hidden; /* las esquinas del ícono y el input quedan redondeadas */
   border: 1px solid rgba(52, 201, 160, 0.30);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06); /* fondo muy sutil */
   transition: border-color 0.2s, box-shadow 0.2s;
 }
+/* Al hacer clic dentro, el borde se pone más verde y aparece el aura */
 .input-wrap:focus-within {
   border-color: rgba(52, 201, 160, 0.75);
   box-shadow: 0 0 0 0.15rem rgba(26, 173, 127, 0.22);
 }
 
+/* El cuadrito con el ícono a la izquierda del input */
 .input-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem 0.75rem;
-  color: #34c9a0;
+  color: #34c9a0; /* el ícono en verde */
   font-size: 0.9rem;
-  background: rgba(52, 201, 160, 0.08);
-  border-right: 1px solid rgba(52, 201, 160, 0.20);
-  flex-shrink: 0;
+  background: rgba(52, 201, 160, 0.08); /* fondo verde muy sutil */
+  border-right: 1px solid rgba(52, 201, 160, 0.20); /* separador entre ícono e input */
+  flex-shrink: 0; /* no se encoge */
 }
 
+/* El campo de texto */
 .field-input {
-  flex: 1;
+  flex: 1; /* ocupa todo el ancho que sobra después del ícono */
   background: transparent;
   border: none;
   outline: none;
-  padding: 0.5rem 0.75rem;    /* igual al form-control de Bootstrap */
+  padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
-  color: #e8f8f3;
+  color: #e8f8f3; /* texto blanco-verdoso */
   font-family: inherit;
 }
-.field-input::placeholder { color: rgba(180, 220, 210, 0.45); }
+.field-input::placeholder { color: rgba(180, 220, 210, 0.45); } /* placeholder tenue */
 
-/* ── Textarea ── */
+/* ── Textarea del campo Mensaje ── */
 .field-textarea {
   display: block;
   width: 100%;
-  min-height: 140px;            /* igual al Bootstrap .textarea-msg */
-  resize: vertical;
+  min-height: 140px; /* mismo alto que Bootstrap */
+  resize: vertical;  /* solo se puede agrandar hacia abajo */
   border-radius: 6px;
   border: 1px solid rgba(52, 201, 160, 0.30);
   background: rgba(255, 255, 255, 0.06);
@@ -226,7 +239,7 @@ body {
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
-  margin-bottom: 1.25rem;       /* ~mb-4 */
+  margin-bottom: 1.25rem; /* espacio antes del botón */
 }
 .field-textarea:focus {
   border-color: rgba(52, 201, 160, 0.75);
@@ -237,8 +250,8 @@ body {
 /* ── Botón Enviar ── */
 .btn-send {
   display: block;
-  width: 100%;
-  padding: 0.65rem;             /* idéntico al Bootstrap .btn-send */
+  width: 100%; /* ocupa todo el ancho de la tarjeta */
+  padding: 0.65rem; /* mismo que Bootstrap */
   border: none;
   border-radius: 6px;
   font-size: 1rem;
@@ -246,11 +259,12 @@ body {
   font-family: inherit;
   letter-spacing: 0.03em;
   cursor: pointer;
-  background: linear-gradient(135deg, #0e7c5a 0%, #1aad7f 100%);
+  background: linear-gradient(135deg, #0e7c5a 0%, #1aad7f 100%); /* degradado verde */
   color: #ffffff;
-  box-shadow: 0 4px 18px rgba(26, 173, 127, 0.40);
+  box-shadow: 0 4px 18px rgba(26, 173, 127, 0.40); /* brillo verde debajo */
   transition: box-shadow 0.2s, transform 0.15s, filter 0.2s;
 }
+/* Al pasar el mouse: más brillo, sube un poco y se aclara */
 .btn-send:hover {
   box-shadow: 0 6px 26px rgba(26, 173, 127, 0.65);
   transform: translateY(-1px);
@@ -258,20 +272,22 @@ body {
 }
 
 /* ===================== FOOTER ===================== */
+/* También con efecto glass, igual que el navbar */
 .footer-glass {
   position: relative;
   z-index: 1;
   background: rgba(10, 28, 23, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(52, 201, 160, 0.15);
+  border-top: 1px solid rgba(52, 201, 160, 0.15); /* línea verde sutil arriba */
 }
 
+/* Info a la izquierda, íconos a la derecha */
 .footer-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* en móvil se apila */
   gap: 0.75rem;
   padding: 0.9rem 1.5rem;
 }
@@ -286,10 +302,11 @@ body {
 
 .footer-role {
   font-size: 0.8rem;
-  color: #7ab8a8;
+  color: #7ab8a8; /* verde-gris */
 }
 .footer-role i { color: #34c9a0; }
 
+/* Los íconos de redes sociales */
 .footer-icons {
   display: flex;
   gap: 1rem;
@@ -301,33 +318,40 @@ body {
   text-decoration: none;
   transition: color 0.2s, text-shadow 0.2s;
 }
+/* Al pasar el mouse, el ícono brilla en verde */
 .footer-icons a:hover {
   color: #34c9a0;
   text-shadow: 0 0 10px rgba(52, 201, 160, 0.65);
 }
 
+/* La franja del copyright */
 .footer-bottom {
   text-align: center;
   padding: 0.5rem;
-  background: rgba(0,0,0,0.30);
+  background: rgba(0,0,0,0.30); /* más oscuro que el footer */
   font-size: 0.8rem;
   color: #4a8070;
 }
 
 /* ===================== Responsive ===================== */
 @media (max-width: 640px) {
+  /* En móvil el menú se oculta y aparece al hacer clic en el hamburguesa */
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: absolute; /* se pone encima de todo el contenido */
     top: 58px; left: 0; right: 0;
-    background: rgba(10, 28, 23, 0.97);
+    background: rgba(10, 28, 23, 0.97); /* casi opaco para que se lea bien */
     backdrop-filter: blur(20px);
     padding: 1rem;
     border-bottom: 1px solid rgba(52, 201, 160, 0.15);
   }
+  /* La clase .open la agrega el JS al hacer clic en el hamburguesa */
   .nav-links.open { display: flex; }
+  /* Muestro el botón hamburguesa solo en móvil */
   .nav-toggler { display: block; }
+  /* Menos padding en la tarjeta */
   .form-card { padding: 1.5rem 1.25rem; }
+  /* El footer se apila en columna */
   .footer-top { flex-direction: column; align-items: flex-start; }
 }

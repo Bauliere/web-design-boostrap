@@ -1,20 +1,27 @@
+/* =========================================
+   VARIABLES GLOBALES
+   Todos los colores en un solo lugar para
+   no repetirlos por todo el archivo.
+   ========================================= */
 :root {
-  --bg-main:        #d6dce8;
-  --bg-card:        #ffffff;
-  --bg-footer:      #b0b8c5;
-  --bg-navbar:      #2d3e50;
-  --color-primary:  #4a5c6e;
-  --color-label:    #2d3e50;
-  --color-icon:     #6b8099;
-  --color-placeholder: #9baab8;
-  --color-send-btn: #4a5c6e;
-  --color-send-hover: #3a4c5e;
-  --border-radius-card: 8px;
-  --border-color:   #c5cfd9;
+  --bg-main:        #d6dce8; /* fondo azul-gris de la página */
+  --bg-card:        #ffffff; /* fondo blanco de la tarjeta */
+  --bg-footer:      #b0b8c5; /* fondo gris del footer */
+  --bg-navbar:      #2d3e50; /* fondo oscuro del navbar */
+  --color-primary:  #4a5c6e; /* color principal para bordes activos */
+  --color-label:    #2d3e50; /* color del texto de etiquetas */
+  --color-icon:     #6b8099; /* color de los íconos dentro de los inputs */
+  --color-placeholder: #9baab8; /* color del texto de ejemplo en inputs */
+  --color-send-btn: #4a5c6e; /* color del botón Enviar */
+  --color-send-hover: #3a4c5e; /* color del botón al pasar el mouse */
+  --border-radius-card: 8px; /* bordes redondeados de la tarjeta */
+  --border-color:   #c5cfd9; /* color del borde de los inputs */
 }
 
+/* Que el padding y border no agranden los elementos */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* La página ocupa toda la pantalla, el footer queda abajo */
 html, body {
   height: 100%;
   margin: 0;
@@ -23,29 +30,35 @@ html, body {
 
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* navbar arriba, main en medio, footer abajo */
   background-color: var(--bg-main);
   min-height: 100vh;
 }
 
-/* Navbar */
+/* ── Navbar ── */
+/* Le pongo el fondo oscuro y la sombra de abajo */
 .navbar-custom {
   background-color: var(--bg-navbar);
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+/* El nombre "JG Dev" en blanco */
 .navbar-custom .navbar-brand { color: #ffffff; font-size: 1.15rem; letter-spacing: 0.02em; }
 .navbar-custom .navbar-brand:hover { color: #cdd8e3; }
+/* Los links del navbar en gris claro */
 .navbar-custom .nav-link { color: #c8d4de; font-size: 0.9rem; transition: color 0.2s; }
+/* Al pasar el mouse o estar activo, el link se pone blanco */
 .navbar-custom .nav-link:hover,
 .navbar-custom .nav-link.active { color: #ffffff; }
+/* El borde del botón hamburguesa en móvil */
 .navbar-custom .navbar-toggler { border-color: rgba(255,255,255,0.3); }
+/* La rayitas del hamburguesa en blanco con filter: invert */
 .navbar-custom .navbar-toggler-icon { filter: invert(1); }
 
-/* Botón comparador */
+/* ── Botón comparador (ir a la versión Glass) ── */
 .btn-switch {
-  background: linear-gradient(135deg, #7b5ea7, #4a5c6e);
+  background: linear-gradient(135deg, #7b5ea7, #4a5c6e); /* degradado morado-azul */
   color: #fff !important;
-  border-radius: 20px;
+  border-radius: 20px; /* muy redondeado, parece píldora */
   padding: 0.3rem 0.9rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -54,52 +67,58 @@ body {
   display: inline-flex;
   align-items: center;
 }
+/* Se vuelve un poco transparente y agranda al pasar el mouse */
 .btn-switch:hover { opacity: 0.88; transform: scale(1.04); color: #fff; }
 
-/* Main */
+/* ── Main ── */
+/* flex: 1 hace que el main ocupe todo el espacio entre navbar y footer */
 .main-wrapper { flex: 1; }
 .page-title { color: var(--color-label); font-size: 1.6rem; letter-spacing: 0.01em; }
 
-/* Card */
+/* ── Tarjeta del formulario ── */
 .form-card {
   background-color: var(--bg-card);
   border-radius: var(--border-radius-card);
   padding: 2rem 2.5rem;
   max-width: 520px;
   width: 100%;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); /* sombra muy suave */
 }
 
-/* Labels */
+/* ── Labels de los campos ── */
 .form-label { color: var(--color-label); font-size: 0.9rem; margin-bottom: 0.35rem; }
 
-/* Inputs */
+/* ── El cuadrito del ícono a la izquierda del input ── */
 .input-group-text {
   background-color: transparent;
   border: 1px solid var(--border-color);
-  border-right: none;
+  border-right: none; /* quito el borde derecho para que se pegue al input */
   color: var(--color-icon);
   padding: 0.5rem 0.75rem;
 }
+
+/* ── Los inputs de texto ── */
 .form-control {
   border: 1px solid var(--border-color);
-  border-left: none;
-  border-radius: 0 6px 6px 0 !important;
+  border-left: none; /* quito el borde izquierdo para que se pegue al ícono */
+  border-radius: 0 6px 6px 0 !important; /* solo redondeo las esquinas derechas */
   color: var(--color-label);
   background-color: #ffffff;
   font-size: 0.9rem;
 }
 .form-control::placeholder { color: var(--color-placeholder); }
+/* Al hacer clic en el input, aparece el borde de color y el aura */
 .form-control:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
 }
+/* La esquina izquierda del ícono se redondea */
 .input-group > .input-group-text:first-child { border-radius: 6px 0 0 6px; }
 
-/* Textarea */
+/* ── Textarea del campo Mensaje ── */
 .textarea-msg {
   min-height: 140px;
-  resize: vertical;
+  resize: vertical; /* el usuario solo puede agrandarlo hacia abajo */
   border-radius: 6px !important;
   border: 1px solid var(--border-color);
   font-size: 0.9rem;
@@ -111,7 +130,7 @@ body {
   box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
 }
 
-/* Botón Enviar */
+/* ── Botón Enviar ── */
 .btn-send {
   background-color: var(--color-send-btn);
   color: #ffffff;
@@ -122,18 +141,25 @@ body {
   letter-spacing: 0.03em;
   transition: background-color 0.2s ease;
 }
+/* Se oscurece al pasar el mouse */
 .btn-send:hover { background-color: var(--color-send-hover); color: #ffffff; }
 
-/* Footer */
+/* ── Footer ── */
 .footer-bar { background-color: var(--bg-footer); width: 100%; }
+/* flex-wrap para que en móvil baje a la siguiente línea si no cabe */
 .footer-top { flex-wrap: wrap; gap: 0.75rem; }
 .footer-name { color: var(--color-label); font-size: 0.95rem; }
 .footer-role { color: #5a6a7a !important; font-size: 0.8rem; }
+/* Los íconos de redes sociales */
 .footer-icon { color: var(--color-label); font-size: 1.2rem; text-decoration: none; transition: color 0.2s ease; }
 .footer-icon:hover { color: #1a2a38; }
+/* La franja del copyright abajo del footer */
 .footer-bottom { background-color: #9aa3b0; color: var(--color-label); font-size: 0.8rem; }
 
+/* ── Responsive: celulares ── */
 @media (max-width: 576px) {
+  /* Menos padding en la tarjeta */
   .form-card { padding: 1.5rem 1.25rem; }
+  /* El footer se apila en columna */
   .footer-top { flex-direction: column; align-items: flex-start; }
 }

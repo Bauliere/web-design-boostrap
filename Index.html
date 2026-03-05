@@ -5,40 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctanos</title>
 
-    <!-- Favicon -->
+    <!-- El iconito de la pestaña -->
     <link rel="icon" type="image/jpeg" href="assets/img/nocall.jpeg" />
 
-    <!-- Bootstrap 5 CSS -->
-
-<!-- <link
+    <!-- Bootstrap desde archivo local, lo descargué en vez de usar el CDN -->
+    <!-- <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
       rel="stylesheet"
     /> -->
-
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome: la librería de íconos que uso en inputs, navbar y footer -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
     />
 
-    <!-- Estilos personalizados -->
+    <!-- Mis estilos personalizados encima de Bootstrap -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
 
     <!-- ===================== NAVBAR ===================== -->
+    <!-- navbar-expand-lg: en pantallas grandes se muestra horizontal, en chicas se colapsa -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid px-4">
 
-        <!-- Brand / Logo -->
+        <!-- Mi logo y nombre a la izquierda -->
         <a class="navbar-brand d-flex align-items-center gap-2" href="#">
           <i class="fa-solid fa-code"></i>
           <span class="fw-bold">JG Dev</span>
         </a>
 
-        <!-- Toggler para móvil -->
+        <!-- El botón de hamburguesa que aparece en móvil -->
+        <!-- data-bs-target apunta al id del menú que va a abrir/cerrar -->
         <button
           class="navbar-toggler"
           type="button"
@@ -51,18 +51,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Links -->
+        <!-- El menú colapsable, en desktop se ve normal, en móvil se esconde -->
         <div class="collapse navbar-collapse" id="navbarMenu">
+          <!-- ms-auto empuja los links hacia la derecha -->
           <ul class="navbar-nav ms-auto gap-lg-2">
-            <li class="nav-item">
-
-            </li>
-            <li class="nav-item">
-
-            </li>
-            <li class="nav-item">
-            </li>
-            <!-- Botón comparador -->
+            <!-- Dejé estos li vacíos por si después agrego más links -->
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+            <!-- Botón para cambiar a la versión Glass -->
             <li class="nav-item ms-lg-3">
               <a class="btn btn-switch" href="Sindex.html">
                 <i class="fa-solid fa-wand-magic-sparkles me-1"></i>Ver versión Glass
@@ -75,16 +72,20 @@
     </nav>
 
     <!-- ===================== MAIN ===================== -->
+    <!-- d-flex + align/justify-center centran la tarjeta en la pantalla -->
     <main class="main-wrapper d-flex align-items-center justify-content-center">
       <div class="container py-5">
         <h2 class="text-center fw-semibold mb-4 page-title">Contáctanos!</h2>
 
+        <!-- La tarjeta blanca con el formulario, mx-auto la centra horizontalmente -->
         <div class="form-card mx-auto">
           <form novalidate>
 
-            <!-- Nombre completo -->
+            <!-- Campo: Nombre completo -->
+            <!-- mb-3 es el espaciado inferior entre campos (Bootstrap) -->
             <div class="mb-3">
               <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+              <!-- input-group pone el ícono y el input pegados en una fila -->
               <div class="input-group">
                 <span class="input-group-text">
                   <i class="fa-solid fa-user"></i>
@@ -93,7 +94,7 @@
               </div>
             </div>
 
-            <!-- Correo Electrónico -->
+            <!-- Campo: Correo Electrónico -->
             <div class="mb-3">
               <label for="correo" class="form-label fw-semibold">Correo Electronico</label>
               <div class="input-group">
@@ -104,7 +105,7 @@
               </div>
             </div>
 
-            <!-- Teléfono -->
+            <!-- Campo: Teléfono -->
             <div class="mb-3">
               <label for="telefono" class="form-label fw-semibold">Telefono</label>
               <div class="input-group">
@@ -115,7 +116,7 @@
               </div>
             </div>
 
-            <!-- Asunto -->
+            <!-- Campo: Asunto -->
             <div class="mb-3">
               <label for="asunto" class="form-label fw-semibold">Asunto</label>
               <div class="input-group">
@@ -126,13 +127,14 @@
               </div>
             </div>
 
-            <!-- Mensaje -->
+            <!-- Campo: Mensaje, mb-4 le da más espacio abajo antes del botón -->
             <div class="mb-4">
               <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+              <!-- textarea en vez de input porque necesito varias líneas -->
               <textarea class="form-control textarea-msg" id="mensaje" placeholder="Escriba su mensaje aquí..."></textarea>
             </div>
 
-            <!-- Botón Enviar -->
+            <!-- d-grid hace que el botón ocupe todo el ancho -->
             <div class="d-grid">
               <button type="submit" class="btn btn-send fw-bold">Enviar</button>
             </div>
@@ -144,16 +146,21 @@
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer-bar">
+
+      <!-- Parte de arriba: mi info a la izquierda, íconos a la derecha -->
       <div class="footer-top d-flex align-items-center justify-content-between px-4 py-3">
         <div class="footer-dev">
+          <!-- Mi nombre con ícono -->
           <p class="mb-0 fw-bold footer-name">
             <i class="fa-solid fa-laptop-code me-2"></i>Jesús Gabriel Amador Ramírez
           </p>
+          <!-- Mi ubicación y rol -->
           <p class="mb-0 footer-role text-muted small">
             <i class="fa-solid fa-location-dot me-1"></i>Pachuca, Hidalgo, MX &nbsp;|&nbsp;
             <i class="fa-solid fa-code me-1"></i>Web Developer &amp; CS Student
           </p>
         </div>
+        <!-- Íconos de redes sociales, target="_blank" abre en nueva pestaña -->
         <div class="footer-icons d-flex gap-3 align-items-center">
           <a href="https://github.com/Bauliere" target="_blank" class="footer-icon" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
@@ -163,12 +170,14 @@
           <a href="#" class="footer-icon" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
+
+      <!-- Parte de abajo: el copyright -->
       <div class="footer-bottom text-center py-2">
         <small>&copy; 2026 Jesús Gabriel Amador Ramírez &mdash; Todos los derechos reservados</small>
       </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <!-- Bootstrap JS: necesario para que funcione el menú hamburguesa -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
