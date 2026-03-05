@@ -1,0 +1,181 @@
+/* =========================================
+   Variables de color (paleta del wireframe)
+   ========================================= */
+:root {
+  --bg-main:        #d6dce8;
+  --bg-card:        #ffffff;
+  --bg-footer:      #b0b8c5;
+  --color-primary:  #4a5c6e;
+  --color-label:    #2d3e50;
+  --color-icon:     #6b8099;
+  --color-placeholder: #9baab8;
+  --color-send-btn: #4a5c6e;
+  --color-send-hover: #3a4c5e;
+  --border-radius-card: 8px;
+  --border-color:   #c5cfd9;
+}
+
+/* =========================================
+   Reset / Base
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}
+
+/* =========================================
+   Main wrapper
+   ========================================= */
+.main-wrapper {
+  flex: 1;
+}
+
+/* =========================================
+   Título de página
+   ========================================= */
+.page-title {
+  color: var(--color-label);
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================
+   Tarjeta del formulario
+   ========================================= */
+.form-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-card);
+  padding: 2rem 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+/* =========================================
+   Labels
+   ========================================= */
+.form-label {
+  color: var(--color-label);
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+/* =========================================
+   Input group (icono + campo)
+   ========================================= */
+.input-group-text {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  color: var(--color-icon);
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control {
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 6px 6px 0 !important;
+  color: var(--color-label);
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.form-control::placeholder {
+  color: var(--color-placeholder);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
+}
+
+/* Primer elemento del grupo redondeado a la izquierda */
+.input-group > .input-group-text:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+/* =========================================
+   Textarea de mensaje
+   ========================================= */
+.textarea-msg {
+  min-height: 140px;
+  resize: vertical;
+  border-radius: 6px !important;
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--color-label);
+}
+
+.textarea-msg::placeholder {
+  color: var(--color-placeholder);
+}
+
+.textarea-msg:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
+}
+
+/* =========================================
+   Botón Enviar
+   ========================================= */
+.btn-send {
+  background-color: var(--color-send-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease;
+}
+
+.btn-send:hover {
+  background-color: var(--color-send-hover);
+  color: #ffffff;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.footer-bar {
+  background-color: var(--bg-footer);
+  height: 48px;
+  width: 100%;
+}
+
+.footer-brand {
+  color: var(--color-label);
+  font-size: 0.9rem;
+}
+
+.footer-icon {
+  color: var(--color-label);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: #1a2a38;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 576px) {
+  .form-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
