@@ -1,0 +1,333 @@
+/* =========================================
+   Glassmorphism — styles2.css  (sin Bootstrap)
+   Paleta: teal oscuro / esmeralda / crema
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Fondo oscuro cálido ── */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0d1f1a 0%, #0e2a23 45%, #152e28 100%);
+  background-attachment: fixed;
+  color: #d4ede6;
+  overflow-x: hidden;
+}
+
+/* ── Orbes decorativos ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.30;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+.orb-1 { width: 400px; height: 400px; background: #1aad7f; top: -80px; left: -60px; animation-delay: 0s; }
+.orb-2 { width: 320px; height: 320px; background: #0e7c5a; bottom: 80px; right: -40px; animation-delay: 4s; }
+.orb-3 { width: 240px; height: 240px; background: #34c9a0; top: 42%; left: 50%; transform: translateX(-50%); animation-delay: 8s; }
+
+@keyframes floatOrb {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(28px) scale(1.06); }
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar-glass {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 28, 23, 0.70);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(52, 201, 160, 0.18);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.4);
+}
+
+/* DESPUÉS */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;              /* ocupa todo el ancho */
+  padding: 0 1.5rem;        /* padding lateral igual al Bootstrap */
+  height: 58px;
+}
+
+
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e8f8f3;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-brand i { color: #34c9a0; }
+.nav-brand:hover { color: #34c9a0; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Botón comparador */
+.btn-switch-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #0e7c5a, #1aad7f) !important;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(26, 173, 127, 0.45);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.btn-switch-glass:hover {
+  box-shadow: 0 0 24px rgba(26, 173, 127, 0.75);
+  transform: scale(1.04);
+}
+
+.nav-toggler {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(52, 201, 160, 0.35);
+  color: #d4ede6;
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ===================== MAIN ===================== */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1rem;
+}
+
+/* Mismo ancho máximo que Bootstrap (container ~720px centrado → card 520px) */
+.container-glass {
+  width: 100%;
+  max-width: 560px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+  color: #e8f8f3;
+  text-shadow: 0 0 18px rgba(52, 201, 160, 0.4);
+}
+
+/* ── Card ── */
+.form-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid rgba(52, 201, 160, 0.22);
+  border-radius: 8px;           /* igual al Bootstrap (--border-radius-card: 8px) */
+  padding: 2rem 2.5rem;         /* idéntico al Bootstrap .form-card */
+  max-width: 520px;             /* idéntico */
+  width: 100%;
+  margin: 0 auto;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(52, 201, 160, 0.12);
+}
+
+/* ── Labels ── */
+.field-group { margin-bottom: 1rem; }     /* ~mb-3 de Bootstrap */
+
+.field-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c8e8e0;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Input wrap (replica el input-group de Bootstrap) ── */
+.input-wrap {
+  display: flex;
+  align-items: stretch;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(52, 201, 160, 0.30);
+  background: rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-wrap:focus-within {
+  border-color: rgba(52, 201, 160, 0.75);
+  box-shadow: 0 0 0 0.15rem rgba(26, 173, 127, 0.22);
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  color: #34c9a0;
+  font-size: 0.9rem;
+  background: rgba(52, 201, 160, 0.08);
+  border-right: 1px solid rgba(52, 201, 160, 0.20);
+  flex-shrink: 0;
+}
+
+.field-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;    /* igual al form-control de Bootstrap */
+  font-size: 0.9rem;
+  color: #e8f8f3;
+  font-family: inherit;
+}
+.field-input::placeholder { color: rgba(180, 220, 210, 0.45); }
+
+/* ── Textarea ── */
+.field-textarea {
+  display: block;
+  width: 100%;
+  min-height: 140px;            /* igual al Bootstrap .textarea-msg */
+  resize: vertical;
+  border-radius: 6px;
+  border: 1px solid rgba(52, 201, 160, 0.30);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.65rem 0.85rem;
+  color: #e8f8f3;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 1.25rem;       /* ~mb-4 */
+}
+.field-textarea:focus {
+  border-color: rgba(52, 201, 160, 0.75);
+  box-shadow: 0 0 0 0.15rem rgba(26, 173, 127, 0.22);
+}
+.field-textarea::placeholder { color: rgba(180, 220, 210, 0.45); }
+
+/* ── Botón Enviar ── */
+.btn-send {
+  display: block;
+  width: 100%;
+  padding: 0.65rem;             /* idéntico al Bootstrap .btn-send */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0e7c5a 0%, #1aad7f 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(26, 173, 127, 0.40);
+  transition: box-shadow 0.2s, transform 0.15s, filter 0.2s;
+}
+.btn-send:hover {
+  box-shadow: 0 6px 26px rgba(26, 173, 127, 0.65);
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+/* ===================== FOOTER ===================== */
+.footer-glass {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 28, 23, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(52, 201, 160, 0.15);
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.9rem 1.5rem;
+}
+
+.footer-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #c8e8e0;
+  margin-bottom: 0.2rem;
+}
+.footer-name i { color: #34c9a0; margin-right: 0.4rem; }
+
+.footer-role {
+  font-size: 0.8rem;
+  color: #7ab8a8;
+}
+.footer-role i { color: #34c9a0; }
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.footer-icons a {
+  color: #7ab8a8;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.footer-icons a:hover {
+  color: #34c9a0;
+  text-shadow: 0 0 10px rgba(52, 201, 160, 0.65);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.30);
+  font-size: 0.8rem;
+  color: #4a8070;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 58px; left: 0; right: 0;
+    background: rgba(10, 28, 23, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(52, 201, 160, 0.15);
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggler { display: block; }
+  .form-card { padding: 1.5rem 1.25rem; }
+  .footer-top { flex-direction: column; align-items: flex-start; }
+}

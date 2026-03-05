@@ -1,6 +1,3 @@
-/* =========================================
-   Variables de color (paleta del wireframe)
-   ========================================= */
 :root {
   --bg-main:        #d6dce8;
   --bg-card:        #ffffff;
@@ -16,12 +13,7 @@
   --border-color:   #c5cfd9;
 }
 
-/* =========================================
-   Reset / Base
-   ========================================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -36,62 +28,39 @@ body {
   min-height: 100vh;
 }
 
-/* =========================================
-   Navbar
-   ========================================= */
+/* Navbar */
 .navbar-custom {
   background-color: var(--bg-navbar);
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
-.navbar-custom .navbar-brand {
-  color: #ffffff;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-}
-
-.navbar-custom .navbar-brand:hover {
-  color: #cdd8e3;
-}
-
-.navbar-custom .nav-link {
-  color: #c8d4de;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-
+.navbar-custom .navbar-brand { color: #ffffff; font-size: 1.15rem; letter-spacing: 0.02em; }
+.navbar-custom .navbar-brand:hover { color: #cdd8e3; }
+.navbar-custom .nav-link { color: #c8d4de; font-size: 0.9rem; transition: color 0.2s; }
 .navbar-custom .nav-link:hover,
-.navbar-custom .nav-link.active {
-  color: #ffffff;
-}
+.navbar-custom .nav-link.active { color: #ffffff; }
+.navbar-custom .navbar-toggler { border-color: rgba(255,255,255,0.3); }
+.navbar-custom .navbar-toggler-icon { filter: invert(1); }
 
-.navbar-custom .navbar-toggler {
-  border-color: rgba(255,255,255,0.3);
+/* Botón comparador */
+.btn-switch {
+  background: linear-gradient(135deg, #7b5ea7, #4a5c6e);
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
 }
+.btn-switch:hover { opacity: 0.88; transform: scale(1.04); color: #fff; }
 
-.navbar-custom .navbar-toggler-icon {
-  filter: invert(1);
-}
+/* Main */
+.main-wrapper { flex: 1; }
+.page-title { color: var(--color-label); font-size: 1.6rem; letter-spacing: 0.01em; }
 
-/* =========================================
-   Main wrapper
-   ========================================= */
-.main-wrapper {
-  flex: 1;
-}
-
-/* =========================================
-   Título de página
-   ========================================= */
-.page-title {
-  color: var(--color-label);
-  font-size: 1.6rem;
-  letter-spacing: 0.01em;
-}
-
-/* =========================================
-   Tarjeta del formulario
-   ========================================= */
+/* Card */
 .form-card {
   background-color: var(--bg-card);
   border-radius: var(--border-radius-card);
@@ -101,18 +70,10 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
-/* =========================================
-   Labels
-   ========================================= */
-.form-label {
-  color: var(--color-label);
-  font-size: 0.9rem;
-  margin-bottom: 0.35rem;
-}
+/* Labels */
+.form-label { color: var(--color-label); font-size: 0.9rem; margin-bottom: 0.35rem; }
 
-/* =========================================
-   Input group (icono + campo)
-   ========================================= */
+/* Inputs */
 .input-group-text {
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -120,7 +81,6 @@ body {
   color: var(--color-icon);
   padding: 0.5rem 0.75rem;
 }
-
 .form-control {
   border: 1px solid var(--border-color);
   border-left: none;
@@ -129,23 +89,14 @@ body {
   background-color: #ffffff;
   font-size: 0.9rem;
 }
-
-.form-control::placeholder {
-  color: var(--color-placeholder);
-}
-
+.form-control::placeholder { color: var(--color-placeholder); }
 .form-control:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
 }
+.input-group > .input-group-text:first-child { border-radius: 6px 0 0 6px; }
 
-.input-group > .input-group-text:first-child {
-  border-radius: 6px 0 0 6px;
-}
-
-/* =========================================
-   Textarea de mensaje
-   ========================================= */
+/* Textarea */
 .textarea-msg {
   min-height: 140px;
   resize: vertical;
@@ -154,19 +105,13 @@ body {
   font-size: 0.9rem;
   color: var(--color-label);
 }
-
-.textarea-msg::placeholder {
-  color: var(--color-placeholder);
-}
-
+.textarea-msg::placeholder { color: var(--color-placeholder); }
 .textarea-msg:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 0.15rem rgba(74, 92, 110, 0.2);
 }
 
-/* =========================================
-   Botón Enviar
-   ========================================= */
+/* Botón Enviar */
 .btn-send {
   background-color: var(--color-send-btn);
   color: #ffffff;
@@ -177,61 +122,18 @@ body {
   letter-spacing: 0.03em;
   transition: background-color 0.2s ease;
 }
+.btn-send:hover { background-color: var(--color-send-hover); color: #ffffff; }
 
-.btn-send:hover {
-  background-color: var(--color-send-hover);
-  color: #ffffff;
-}
+/* Footer */
+.footer-bar { background-color: var(--bg-footer); width: 100%; }
+.footer-top { flex-wrap: wrap; gap: 0.75rem; }
+.footer-name { color: var(--color-label); font-size: 0.95rem; }
+.footer-role { color: #5a6a7a !important; font-size: 0.8rem; }
+.footer-icon { color: var(--color-label); font-size: 1.2rem; text-decoration: none; transition: color 0.2s ease; }
+.footer-icon:hover { color: #1a2a38; }
+.footer-bottom { background-color: #9aa3b0; color: var(--color-label); font-size: 0.8rem; }
 
-/* =========================================
-   Footer
-   ========================================= */
-.footer-bar {
-  background-color: var(--bg-footer);
-  width: 100%;
-}
-
-.footer-top {
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.footer-name {
-  color: var(--color-label);
-  font-size: 0.95rem;
-}
-
-.footer-role {
-  color: #5a6a7a !important;
-  font-size: 0.8rem;
-}
-
-.footer-icon {
-  color: var(--color-label);
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-icon:hover {
-  color: #1a2a38;
-}
-
-.footer-bottom {
-  background-color: #9aa3b0;
-  color: var(--color-label);
-  font-size: 0.8rem;
-}
-
-/* =========================================
-   Responsive
-   ========================================= */
 @media (max-width: 576px) {
-  .form-card {
-    padding: 1.5rem 1.25rem;
-  }
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .form-card { padding: 1.5rem 1.25rem; }
+  .footer-top { flex-direction: column; align-items: flex-start; }
 }

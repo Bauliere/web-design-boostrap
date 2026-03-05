@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contáctanos — Glass Edition</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/img/nocall.jpeg" />
+
+    <!-- Font Awesome 6 -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Glassmorphism -->
+    <link rel="stylesheet" href="./assets/css/styles2.css" />
+  </head>
+  <body>
+
+    <!-- Orbes decorativos -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar-glass">
+      <div class="nav-inner">
+
+        <!-- Brand -->
+        <a class="nav-brand" href="#">
+          <i class="fa-solid fa-code"></i>
+          <span>JG Dev</span>
+        </a>
+
+        <!-- Toggler móvil -->
+        <button class="nav-toggler" id="navToggler" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Solo el botón comparador -->
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a class="btn-switch-glass" href="Index.html">
+              <i class="fa-brands fa-bootstrap"></i> Ver versión Bootstrap
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main-wrapper">
+      <div class="container-glass">
+        <h2 class="page-title">Contáctanos!</h2>
+
+        <div class="form-card">
+          <form novalidate>
+
+            <!-- Nombre completo -->
+            <div class="field-group">
+              <label for="nombre" class="field-label">Nombre completo</label>
+              <div class="input-wrap">
+                <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="nombre" class="field-input" placeholder="Ej: Fausto" />
+              </div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="field-group">
+              <label for="correo" class="field-label">Correo Electronico</label>
+              <div class="input-wrap">
+                <span class="input-icon"><i class="fa-regular fa-envelope"></i></span>
+                <input type="email" id="correo" class="field-input" placeholder="Ej: SickStim@gmail.com" />
+              </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="field-group">
+              <label for="telefono" class="field-label">Telefono</label>
+              <div class="input-wrap">
+                <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+                <input type="tel" id="telefono" class="field-input" placeholder="Ej: 771 198 3750" />
+              </div>
+            </div>
+
+            <!-- Asunto -->
+            <div class="field-group">
+              <label for="asunto" class="field-label">Asunto</label>
+              <div class="input-wrap">
+                <span class="input-icon"><i class="fa-solid fa-pencil"></i></span>
+                <input type="text" id="asunto" class="field-input" placeholder="Motivo de su mensaje" />
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="field-group">
+              <label for="mensaje" class="field-label">Mensaje</label>
+              <textarea id="mensaje" class="field-textarea" placeholder="Escriba su mensaje aquí..."></textarea>
+            </div>
+
+            <!-- Botón Enviar -->
+            <button type="submit" class="btn-send">Enviar</button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer-glass">
+      <div class="footer-top">
+        <div class="footer-dev">
+          <p class="footer-name">
+            <i class="fa-solid fa-laptop-code"></i> Jesús Gabriel Amador Ramírez
+          </p>
+          <p class="footer-role">
+            <i class="fa-solid fa-location-dot"></i> Pachuca, Hidalgo, MX &nbsp;|&nbsp;
+            <i class="fa-solid fa-code"></i> Web Developer &amp; CS Student
+          </p>
+        </div>
+        <div class="footer-icons">
+          <a href="https://github.com/Bauliere" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; 2026 Jesús Gabriel Amador Ramírez &mdash; Todos los derechos reservados</small>
+      </div>
+    </footer>
+
+    <script>
+      const toggler = document.getElementById('navToggler');
+      const navLinks = document.getElementById('navLinks');
+      toggler.addEventListener('click', () => navLinks.classList.toggle('open'));
+    </script>
+  </body>
+</html>

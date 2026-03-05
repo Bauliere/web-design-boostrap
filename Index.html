@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctanos</title>
 
-    <!-- Favicon!! -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/img/nocall.jpeg" />
 
     <!-- Bootstrap 5 CSS -->
@@ -55,13 +55,18 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ms-auto gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-house me-1"></i>Inicio</a>
+
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-folder-open me-1"></i>Portafolio</a>
+
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-envelope me-1"></i>Contacto</a>
+            </li>
+            <!-- Botón comparador -->
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-switch" href="Sindex.html">
+                <i class="fa-solid fa-wand-magic-sparkles me-1"></i>Ver versión Glass
+              </a>
             </li>
           </ul>
         </div>
@@ -84,12 +89,7 @@
                 <span class="input-group-text">
                   <i class="fa-solid fa-user"></i>
                 </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Ej: Fausto"
-                />
+                <input type="text" class="form-control" id="nombre" placeholder="Ej: Fausto" />
               </div>
             </div>
 
@@ -100,12 +100,7 @@
                 <span class="input-group-text">
                   <i class="fa-regular fa-envelope"></i>
                 </span>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="correo"
-                  placeholder="Ej: SickStim@gmail.com"
-                />
+                <input type="email" class="form-control" id="correo" placeholder="Ej: SickStim@gmail.com" />
               </div>
             </div>
 
@@ -116,12 +111,7 @@
                 <span class="input-group-text">
                   <i class="fa-solid fa-phone"></i>
                 </span>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telefono"
-                  placeholder="Ej: 771 198 3750"
-                />
+                <input type="tel" class="form-control" id="telefono" placeholder="Ej: 771 198 3750" />
               </div>
             </div>
 
@@ -132,23 +122,14 @@
                 <span class="input-group-text">
                   <i class="fa-solid fa-pencil"></i>
                 </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="asunto"
-                  placeholder="Motivo de su mensaje"
-                />
+                <input type="text" class="form-control" id="asunto" placeholder="Motivo de su mensaje" />
               </div>
             </div>
 
             <!-- Mensaje -->
             <div class="mb-4">
               <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
-              <textarea
-                class="form-control textarea-msg"
-                id="mensaje"
-                placeholder="Escriba su mensaje aquí..."
-              ></textarea>
+              <textarea class="form-control textarea-msg" id="mensaje" placeholder="Escriba su mensaje aquí..."></textarea>
             </div>
 
             <!-- Botón Enviar -->
@@ -164,8 +145,6 @@
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer-bar">
       <div class="footer-top d-flex align-items-center justify-content-between px-4 py-3">
-
-        <!-- Info del programador -->
         <div class="footer-dev">
           <p class="mb-0 fw-bold footer-name">
             <i class="fa-solid fa-laptop-code me-2"></i>Jesús Gabriel Amador Ramírez
@@ -175,30 +154,17 @@
             <i class="fa-solid fa-code me-1"></i>Web Developer &amp; CS Student
           </p>
         </div>
-
-        <!-- Redes sociales -->
         <div class="footer-icons d-flex gap-3 align-items-center">
           <a href="https://github.com/Bauliere" target="_blank" class="footer-icon" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="#" class="footer-icon" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" class="footer-icon" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="footer-icon" aria-label="X (Twitter)">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
+          <a href="#" class="footer-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-icon" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
-
       </div>
-
-      <!-- Línea de copyright -->
       <div class="footer-bottom text-center py-2">
-        <small>
-          &copy; 2026 Jesús Gabriel Amador Ramírez &mdash; Todos los derechos reservados
-        </small>
+        <small>&copy; 2026 Jesús Gabriel Amador Ramírez &mdash; Todos los derechos reservados</small>
       </div>
     </footer>
 
